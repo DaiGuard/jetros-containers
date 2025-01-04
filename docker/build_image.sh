@@ -6,5 +6,5 @@ cd $(dirname $0)/..
 
 # ベースイメージのビルド
 docker build \
-    -t jetsonros:base \
+    -t jetros:base \
     -f docker/Dockerfile.base .

@@ -1,6 +1,9 @@
 #! /bin/bash
 set -e
 
+# tzdataインストール回避
+export DEBIAN_FRONTEND=noninteractive
+
 # locale設定
 locale  # check for UTF-8
 apt-get update && apt-get install locales -y
@@ -8,9 +11,6 @@ locale-gen en_US en_US.UTF-8
 update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 export LANG=en_US.UTF-8
 locale  # verify settings
-
-# tzdataインストール回避
-export DEBIAN_FRONTEND=noninteractive
 
 # ROS2のインストール
 apt-get install software-properties-common -y
