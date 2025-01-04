@@ -1,0 +1,15 @@
+FROM nvcr.io/nvidia/l4t-base:r36.2.0 
+
+# Install ROS
+COPY ./scripts/* /tmp/
+RUN /tmp/ros_installer.sh
+
+# Copy entrypoint script
+COPY ./entrypoint/ros_entrypoint.sh /ros_entrypoint.sh
+
+# Set entrypoint
+ENTRYPOINT [ "/ros_entrypoint.sh" ]
+
+# Default command
+CMD ["/bin/bash"]
+
