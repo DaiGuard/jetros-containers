@@ -6,11 +6,12 @@ ENV DEBCONF_NOWARNINGS=yes
 
 # Install minimal packages
 RUN apt-get update && apt-get install -y \
-    curl \
-    gnupg2 \
-    lsb-release \
-    wget \
-    && rm -rf /var/lib/apt/lists/*
+  curl \
+  gnupg2 \
+  lsb-release \
+  wget \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
 # Copy scripts to temporary directory
 COPY ./scripts/* /tmp/
