@@ -18,8 +18,14 @@ jobs:
         with:
           platforms: linux/arm64
 
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Build the Docker image
-        run: ./docker/build_image.sh
+        run: |
+          ls -a
+          echo ""
+          uname -a
 
 # - uses: actions/checkout@v4
 # - name: Build the Docker image
