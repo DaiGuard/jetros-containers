@@ -1,3 +1,5 @@
+<img src="https://github.com/DaiGuard/jetros-containers/actions/workflows/docker-image.yml/badge.svg" />
+
 # JetRos-Containers
 
 Container with ROS installed running on Jetson
@@ -19,7 +21,7 @@ docker run -it --rm --net=host --runtime nvidia -e DISPLAY=$DISPLAY -v /tmp/.X11
 
 ### To-Do
 
-* [ ] GPG鍵の更新を入れる
+* [x] GPG鍵の更新を入れる
 * [ ] IsaacROS + NITROSが実行できるようにする
 
 ----
