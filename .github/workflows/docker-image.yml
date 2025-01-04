@@ -16,16 +16,22 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
         with:
-          platforms: linux/arm64
+          platforms: "linux/arm64"
 
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Build the Docker image
-        run: |
-          ls -a
-          echo ""
-          uname -a
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build Docker image
+        run: ./docker/build_image.sh
+
+      # - name: Build the Docker image
+      #   run: |
+      #     ls -a
+      #     echo ""
+      #     uname -a
 
 # - uses: actions/checkout@v4
 # - name: Build the Docker image
